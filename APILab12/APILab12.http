@@ -1,0 +1,77 @@
+@APILab12_HostAddress = http://localhost:5119
+@instructorId = 1
+@estudianteId = 1
+
+### Crear instructor
+POST {{APILab12_HostAddress}}/api/instructores
+Content-Type: application/json
+
+{
+  "nombres": "Ana",
+  "apellidos": "Torres Ruiz",
+  "especialidad": "Desarrollo de Software",
+  "email": "ana.torres@tecsup.edu.pe",
+  "activo": true
+}
+
+### Listar instructores
+GET {{APILab12_HostAddress}}/api/instructores
+Accept: application/json
+
+### Obtener instructor
+GET {{APILab12_HostAddress}}/api/instructores/{{instructorId}}
+Accept: application/json
+
+### Actualizar instructor
+PUT {{APILab12_HostAddress}}/api/instructores/{{instructorId}}
+Content-Type: application/json
+
+{
+  "idInstructor": {{instructorId}},
+  "nombres": "Ana María",
+  "apellidos": "Torres Ruiz",
+  "especialidad": "Arquitectura de Software",
+  "email": "ana.torres@tecsup.edu.pe",
+  "activo": true
+}
+
+### Eliminar instructor
+DELETE {{APILab12_HostAddress}}/api/instructores/{{instructorId}}
+
+### Crear estudiante
+POST {{APILab12_HostAddress}}/api/estudiantes
+Content-Type: application/json
+
+{
+  "nombres": "Luis",
+  "apellidos": "Paredes Soto",
+  "email": "luis.paredes@tecsup.edu.pe",
+  "telefono": "987654321",
+  "fechaRegistro": "2026-11-12T20:00:00Z",
+  "activo": true
+}
+
+### Listar estudiantes
+GET {{APILab12_HostAddress}}/api/estudiantes
+Accept: application/json
+
+### Obtener estudiante
+GET {{APILab12_HostAddress}}/api/estudiantes/{{estudianteId}}
+Accept: application/json
+
+### Actualizar estudiante
+PUT {{APILab12_HostAddress}}/api/estudiantes/{{estudianteId}}
+Content-Type: application/json
+
+{
+  "idEstudiante": {{estudianteId}},
+  "nombres": "Luis Alberto",
+  "apellidos": "Paredes Soto",
+  "email": "luis.paredes@tecsup.edu.pe",
+  "telefono": "987654321",
+  "fechaRegistro": "2026-11-12T20:00:00Z",
+  "activo": true
+}
+
+### Eliminar estudiante
+DELETE {{APILab12_HostAddress}}/api/estudiantes/{{estudianteId}}
